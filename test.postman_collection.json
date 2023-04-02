@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "0e522cd5-c3d6-43cd-92fe-e6b8b90e9bf1",
+		"name": "RESTful API Node Server Boilerplate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Shawn Dao\",\r\n    \"email\": \"daominhsangvn@gmail.com\",\r\n    \"password\": \"Abc@123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"daominhsangvn@gmail.com\",\r\n    \"password\": \"Abc@123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/auth/verify-email?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDI3ZTU3NGU4MjVkNDU3ODQ4ZTgwNTUiLCJpYXQiOjE2ODAzMzcwODMsImV4cCI6MTY4MDMzNzY4MywidHlwZSI6InZlcmlmeUVtYWlsIn0.iwBsoHDB-HFbrpUNZJbUyjzILI_ECnYShdatkCBXub8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"auth",
+						"verify-email"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDI3ZTU3NGU4MjVkNDU3ODQ4ZTgwNTUiLCJpYXQiOjE2ODAzMzcwODMsImV4cCI6MTY4MDMzNzY4MywidHlwZSI6InZlcmlmeUVtYWlsIn0.iwBsoHDB-HFbrpUNZJbUyjzILI_ECnYShdatkCBXub8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Email Send",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDI3ZTU3NGU4MjVkNDU3ODQ4ZTgwNTUiLCJpYXQiOjE2ODAzMzY0NTYsImV4cCI6MTY4MDMzODI1NiwidHlwZSI6ImFjY2VzcyJ9.LoUSi2ZIIn_7YCCEbPNL9y5Nxy4afGugmVH2rHfJ7MI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/auth/send-verification-email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"auth",
+						"send-verification-email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDI3ZTU3NGU4MjVkNDU3ODQ4ZTgwNTUiLCJpYXQiOjE2ODAzMzY0NTYsImV4cCI6MTY4MDMzODI1NiwidHlwZSI6ImFjY2VzcyJ9.LoUSi2ZIIn_7YCCEbPNL9y5Nxy4afGugmVH2rHfJ7MI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
